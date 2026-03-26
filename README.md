@@ -11,21 +11,21 @@ Predicts the likelihood that a borrower will default on a loan.
 - **Algorithm:** Logistic Regression with custom p-value computation
 - **Feature Selection:** LassoCV (5-fold cross-validation)
 - **Evaluation:** ROC-AUC, Confusion Matrix, Classification threshold = 0.75
-- **Output:** `pd_model.sav`
+- **Output:** `pd_model.sav` (generated on run, not tracked in repo)
 
 ### 2. Loss Given Default (LGD)
 Estimates the percentage of the loan amount lost if a default occurs. Uses a two-stage approach:
 - **Stage 1 — Classification:** Logistic Regression to predict whether any loss occurs (threshold = 0.45)
 - **Stage 2 — Regression:** Linear Regression to estimate the magnitude of loss
 - **Evaluation:** ROC-AUC (Stage 1), MSE + R² (Stage 2)
-- **Output:** `lgd_model_stage_1.sav`, `lgd_model_stage_2.sav`
+- **Output:** `lgd_model_stage_1.sav`, `lgd_model_stage_2.sav` (generated on run, not tracked in repo)
 
 ### 3. Exposure at Default (EAD)
 Estimates the Credit Conversion Factor (CCF) — the proportion of the loan outstanding at the time of default.
 - **Algorithm:** Linear Regression with custom p-value computation
 - **Target:** `CCF = (funded_amnt − total_rec_prncp) / funded_amnt`
 - **Evaluation:** R², MSE, Pearson Correlation
-- **Output:** `ead_model.sav`
+- **Output:** `ead_model.sav` (generated on run, not tracked in repo)
 
 ---
 
@@ -57,11 +57,6 @@ Credit risk/
 ├── loan_data_inputs_test.csv    # Preprocessed test features (generated)
 ├── loan_data_targets_train.csv  # Training labels
 ├── loan_data_targets_test.csv   # Test labels
-│
-├── pd_model.sav                 # Saved PD model
-├── lgd_model_stage_1.sav        # Saved LGD Stage 1 model
-├── lgd_model_stage_2.sav        # Saved LGD Stage 2 model
-├── ead_model.sav                # Saved EAD model
 │
 └── requirements.txt
 ```

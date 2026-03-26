@@ -1,6 +1,9 @@
 # Large data files - download from Kaggle (see README)
 *.csv
 
+# Trained model files (regenerate by running notebooks)
+*.sav
+
 # Jupyter notebook checkpoints
 .ipynb_checkpoints/
 
