@@ -1,0 +1,12 @@
+# Large data files - download from Kaggle (see README)
+*.csv
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
